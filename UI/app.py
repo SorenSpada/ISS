@@ -8,27 +8,29 @@ def make_request(sentence: str):
     y = requests.post(base_url, json=data)
     return y.json()
 
-@app('/')
+@app("/")
 async def user_text(q: Q):
     if q.args.NERd:
         result = make_request(sentence = q.args.text)
-        q.page['form'] = ui.form_card(box='1 1 3 10', items=[
-        ui.text_l('spaCy, FastAPI, Docker, and h2o wave NER'),
+        q.page["form"] = ui.form_card(box="1 1 5 10", items=[
+        ui.text_xl("SpaCy, FastAPI, Docker, and H2O Wave NER"),
+        ui.text_l("Raw List Result (Top) NER Visualization (Bottom)"),
         ui.text(str(result)),
-        ui.button(name='goback', label='go back', primary=True),
-    ])
+        ui.button(name="goback", label="Go Back", primary=True)])
         await q.page.save()
+
     elif q.args.goback:
-        q.page['form'] = ui.form_card(box='1 1 3 10', items=[
-        ui.text_l('spaCy, FastAPI, Docker, and h2o wave NER'),
-        ui.textbox(name='text', label='Insert Text to be NERded', multiline=True),
-        ui.button(name='NERd', label='NERd', primary=True),
+        q.page["form"] = ui.form_card(box = "1 1 3 10", items = [
+        ui.text_l("spaCy, FastAPI, Docker, and h2o wave NER"),
+        ui.textbox(name="text", label="Insert Text to be NERded", multiline=True),
+        ui.button(name="NERd", label="NERd", primary=True),
     ])
         await q.page.save()
+
     else:
-        q.page['form'] = ui.form_card(box='1 1 3 10', items=[
-        ui.text_l('spaCy, FastAPI, Docker, and h2o wave NER'),
-        ui.textbox(name='text', label='Insert Text to be NERded', multiline=True),
-        ui.button(name='NERd', label='NERd', primary=True),
+        q.page["form"] = ui.form_card(box="1 1 3 10", items=[
+        ui.text_l("spaCy, FastAPI, Docker, and h2o wave NER"),
+        ui.textbox(name="text", label="Insert Text to be NERded", multiline=True),
+        ui.button(name="NERd", label="NERd", primary=True),
     ])
         await q.page.save()

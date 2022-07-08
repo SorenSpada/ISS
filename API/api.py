@@ -1,4 +1,5 @@
 import spacy
+from spacy import displacy
 from pydantic import BaseModel
 from fastapi import FastAPI
 
@@ -17,7 +18,9 @@ class Result(BaseModel):
 
 @app.post("/")
 def result(input: Input):
+    global html
     doc = en_core_web_sm(input.sentence)
+    html = displacy.render(doc, style = "ent", minify=True)
 
     result = []
     for entity in doc.ents:
@@ -28,7 +31,7 @@ def result(input: Input):
       comp["text"] = entity.text
       result.append(comp)
 
-    return {"result": result}
+    return {"result": result, "html": html}
 
 @app.get("/")
 def hello():

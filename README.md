@@ -34,8 +34,18 @@ Named-Entity Recognition or NER is known by a few names: Entity Identification, 
 With big tech companies as well as big news corporation amassing PETABYTES of data per day, there is a need for fast and more efficient ways of sorting and analyzing data. The fastest way to do it is through a machine learning algorithm like NER. Having NER quickly identify specifics in a text gives any user the opportunity to sort through immense amounts of unfiltered data.
 
 ### How To Use This Project
-If you are new to NER's, please read through this README document as it highlights all of the technologies used and explains the code that coincides with each piece of technology used. Enjoy.
+If you are new to NER's, please read through this README document as it highlights all of the technologies used. As of how to run the code, perform the following 2 commands in your main directory in order to activate:
 
+```sh
+  docker-compose build
+  docker-compose up
+```
+
+To deactivate, all you have to do is the opposite of the latter statement:
+
+```sh
+  docker-compose down
+```
 
 ## Technologies
 ### python3
@@ -52,7 +62,7 @@ The current version, as well as the version this project uses, of python is 3.10
     <img src="https://spacy.io/static/social_default-1d3b50b1eba4c2b06244425ff0c49570.jpg" width="400" height="100" alt="SPACY"/>
 </a>
 
-The current version, as well as the version this project uses, of spaCy is 3.3. With easy customization, fast training, and access to larger word vectors than most other Natural Language Processing libraries, it is easy to see why spaCy was chosen over the alternatives. In the following section, we will see our first and main chunk of code applying python3, spaCy v3, and a framwork called Fast API.
+The current version, as well as the version this project uses, of spaCy is 3.3. With easy customization, fast training, and access to larger word vectors than most other Natural Language Processing libraries, it is easy to see why spaCy was chosen over the alternatives.
 
 
 ### Fast API

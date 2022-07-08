@@ -1,7 +1,7 @@
 services:
   api:
     build:
-      context: /API
+      context: ./API
       dockerfile: dockerfile
     container_name: NER_API
     ports:
@@ -12,7 +12,7 @@ services:
     
   ui:
     build:
-      context: /UI
+      context: ./UI
       dockerfile: dockerfile
     container_name: NER_UI
     ports:

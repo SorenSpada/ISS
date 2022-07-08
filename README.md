@@ -12,6 +12,10 @@ This python repository is intended to showcase and test NER with a Fast API serv
     - [What Is NER?](#what-is-ner)
     - [Why Use NER?](#why-use-ner)
     - [How To Use This Project](#how-to-use-this-project)
+- [Test Run](#test-run)
+    - [NER Initial Screen](#ner-initial-screen)
+    - [NER Raw Output](#ner-raw-output)
+    - [NER Visualizer](#ner-visualizer)
 - [Technologies](#technologies)
     - [python3](#python3)
     - [Spacy v3](#spacy-v3)
@@ -41,11 +45,35 @@ If you are new to NER's, please read through this README document as it highligh
   docker-compose up
 ```
 
-To deactivate, all you have to do is the opposite of the latter statement:
+To deactivate, all you have to do is the opposite of the latter statement or ctrl+c in your terminal:
 
 ```sh
   docker-compose down
 ```
+
+## Test Run
+The last thing I want to do before getting into what tools I used is both showcase the capability of the NER and show you what the v1.0 and v1.1 outputs will look like, so you are not confused as to why the UI looks a certain way! I thought that the best way to do this would be by inputting an entire transcript of a movie. For this example, I have chosen to copy and paste the [entire transcript of one of my favorites; Dreamworks Animations, "Bee Movie,"](http://www.script-o-rama.com/movie_scripts/a1/bee-movie-script-transcript-seinfeld.html) staring Jerry Seinfeld. Even with the pages of text, the program gave outputs in a matter of seconds!
+
+### NER Initial Screen
+You will first be greeted by a friendly message asking you for text to be NERded.
+
+<a href="https://imgur.com/b6nE4Rh">
+    <img src="https://i.imgur.com/b6nE4Rh.png" width="400" height="800"  alt="START"/>
+</a>
+
+### NER Raw Output
+Once you finish typing in your text, you press the button and the first thing you will see (other than the titling) is a raw dict output. It displays the starting index of the special word, the ending index of the special word, the label for the special word, and finally the special word itself. This raw data gives programmers, data analysts, and machine learning programs many opportunities to sort relevant and irrelevant data based on these key words.
+
+<a href="https://imgur.com/eVHkHaC">
+    <img src="https://i.imgur.com/eVHkHaC.png" width="400" height="800"  alt="RAW LIST"/>
+</a>
+
+### NER Visualizer
+Finally for the most beautiful part of the program, the visualizer. Seeing your submitted text annotated through the program and returned as html is incredibly satisfying and it gives you an oppportunity to sort through your text and spot out people, places, or dates you may have previously missed.
+
+<a href="https://imgur.com/iqHPJUC">
+    <img src="https://i.imgur.com/iqHPJUC.png" width="400" height="800"  alt="VISUALIZER"/>
+</a>
 
 ## Technologies
 ### python3
